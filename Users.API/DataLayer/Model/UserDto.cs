@@ -11,5 +11,6 @@ namespace User.API.DataLayer.Model
         public string PhoneNumber { set; get; }
         public string Address { set; get; }
         public DateTime Created { set; get; }
+        public DateTime DateOfBirth { set; get; }
     }
 }

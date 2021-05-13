@@ -1,3 +1,5 @@
 /.idea/.idea.CQRSUser/.idea/encodings.xml
 /.idea/*
 /.vs/*
+/User.API.UnitTests/bin*
+/User.API.UnitTests/obj*
