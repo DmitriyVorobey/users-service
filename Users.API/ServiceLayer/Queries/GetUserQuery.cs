@@ -1,7 +1,7 @@
-﻿using CQRSUser.Models;
-using MediatR;
+﻿using MediatR;
+using User.API.Models;
 
-namespace ServiceLayer.Query.Models
+namespace CQRSUser.ServiceLayer.Queries
 {
     public class GetUserQuery : IRequest<UserViewModel>
     {

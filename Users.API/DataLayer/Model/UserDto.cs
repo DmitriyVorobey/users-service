@@ -1,4 +1,6 @@
-﻿namespace CQRSUser.DataLayer.Model
+﻿using System;
+
+namespace User.API.DataLayer.Model
 {
     public class UserDto
     {
@@ -8,5 +10,6 @@
         public string LastName { set; get; }
         public string PhoneNumber { set; get; }
         public string Address { set; get; }
+        public DateTime Created { set; get; }
     }
 }

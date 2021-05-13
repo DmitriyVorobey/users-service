@@ -1,10 +1,11 @@
-﻿using CQRSUser.DataLayer.Model;
+﻿using User.API.DataLayer.Model;
 using System.Threading.Tasks;
 
-namespace CQRSUser.DataLayer.Repositories
+namespace User.API.DataLayer.Repositories
 {
     public interface IUsersRepository
     {
         Task<UserDto> GetUser(int id);
+        Task CreateUser(UserDto user);
     }
 }

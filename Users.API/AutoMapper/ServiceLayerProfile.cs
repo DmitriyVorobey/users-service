@@ -1,14 +1,16 @@
 ﻿using AutoMapper;
-using CQRSUser.DataLayer.Model;
-using CQRSUser.Models;
+using User.API.DataLayer.Model;
+using User.API.Models;
+using User.API.ServiceLayer.Commands;
 
-namespace CQRSUser.ServiceLayer.Mappers
+namespace User.API.AutoMapper
 {
     public class ServiceLayerProfile : Profile
     {
         public ServiceLayerProfile()
         {
             CreateMap<UserDto, UserViewModel>();
+            CreateMap<CreateUserCommand, UserDto>();
         }
     }
 }
