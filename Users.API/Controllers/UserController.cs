@@ -29,7 +29,7 @@ namespace User.API.Controllers
         }
 
         [HttpPost]
-        public async Task CreateUserModel(CreateUserModel model)
+        public async Task CreateUser(CreateUserModel model)
         {
             var createUserCommand = _mapper.Map<CreateUserCommand>(model);
             await _mediator.Send(createUserCommand);
