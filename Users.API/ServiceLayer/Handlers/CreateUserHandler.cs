@@ -1,44 +1,29 @@
 ﻿using AutoMapper;
 using MediatR;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
-using User.API.DataLayer.Model;
-using User.API.DataLayer.Repositories;
-using User.API.ServiceLayer.Commands;
+using Users.API.DataLayer.Model;
+using Users.API.DataLayer.Repositories;
+using Users.API.ServiceLayer.Commands;
 
-namespace User.API.ServiceLayer.Handlers
+namespace Users.API.ServiceLayer.Handlers
 {
     public class CreateUserHandler : IRequestHandler<CreateUserCommand, CommandExecutionResult>
     {
         private IUsersRepository _usersRepository;
-        private IMapper _mapper;
 
-        public CreateUserHandler(IUsersRepository usersRepository, IMapper mapper)
+        public CreateUserHandler(IUsersRepository usersRepository)
         {
             _usersRepository = usersRepository;
-            _mapper = mapper;
         }
 
         public async Task<CommandExecutionResult> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
-            Validate(request);
-
-            var user = _mapper.Map<UserDto>(request);
+            var user = new User(Guid.NewGuid(), request.Email, request.FirstName, request.LastName);
             await _usersRepository.CreateUser(user);
 
             return new CommandExecutionResult() { Result = true };
-        }
-
-        private void Validate(CreateUserCommand request)
-        {
-            if (string.IsNullOrEmpty(request.FirstName))
-                throw new CommandValidationException("First name cannot be null or empty");
-
-            if (string.IsNullOrEmpty(request.LastName))
-                throw new CommandValidationException("Last name cannot be null or empty");
-
-            if (string.IsNullOrEmpty(request.Email))
-                throw new CommandValidationException("Email cannot be null or empty");
         }
     }
 }

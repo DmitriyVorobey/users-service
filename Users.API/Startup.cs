@@ -1,4 +1,3 @@
-using User.API.DataLayer.Repositories;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -6,8 +5,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Reflection;
+using Users.API.DataLayer.Repositories;
 
-namespace User.API
+namespace Users.API
 {
     public class Startup
     {

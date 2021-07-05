@@ -1,4 +1,4 @@
-﻿namespace User.API.ServiceLayer.Handlers
+﻿namespace Users.API.ServiceLayer.Handlers
 {
     public class CommandExecutionResult
     {

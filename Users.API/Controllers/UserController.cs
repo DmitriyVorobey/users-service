@@ -1,12 +1,13 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using AutoMapper;
-using CQRSUser.ServiceLayer.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using User.API.Models;
-using User.API.ServiceLayer.Commands;
+using Users.API.Models;
+using Users.API.ServiceLayer.Commands;
+using Users.API.ServiceLayer.Queries;
 
-namespace User.API.Controllers
+namespace Users.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -22,7 +23,7 @@ namespace User.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<UserViewModel> GetUser(int id)
+        public async Task<UserViewModel> GetUser(Guid id)
         {
             var user = await _mediator.Send(new GetUserQuery(id));
             return user;

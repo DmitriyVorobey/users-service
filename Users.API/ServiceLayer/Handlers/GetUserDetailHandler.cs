@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
-using User.API.DataLayer.Repositories;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
-using CQRSUser.ServiceLayer.Queries;
-using User.API.Models;
+using Users.API.DataLayer.Repositories;
+using Users.API.Models;
+using Users.API.ServiceLayer.Queries;
 
-namespace User.API.ServiceLayer.Handlers
+namespace Users.API.ServiceLayer.Handlers
 {
     public class GetUserDetailHandler : IRequestHandler<GetUserQuery, UserViewModel>
     {

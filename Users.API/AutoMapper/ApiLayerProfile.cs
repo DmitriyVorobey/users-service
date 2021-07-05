@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using User.API.Models;
-using User.API.ServiceLayer.Commands;
+using Users.API.Models;
+using Users.API.ServiceLayer.Commands;
 
-namespace User.API.AutoMapper
+namespace Users.API.AutoMapper
 {
     public class ApiLayerProfile : Profile
     {

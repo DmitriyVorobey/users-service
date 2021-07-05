@@ -1,11 +1,12 @@
-﻿using User.API.DataLayer.Model;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using System;
+using Users.API.DataLayer.Model;
 
-namespace User.API.DataLayer.Repositories
+namespace Users.API.DataLayer.Repositories
 {
     public interface IUsersRepository
     {
-        Task<UserDto> GetUser(int id);
-        Task CreateUser(UserDto user);
+        Task<User> GetUser(Guid id);
+        Task CreateUser(User user);
     }
 }

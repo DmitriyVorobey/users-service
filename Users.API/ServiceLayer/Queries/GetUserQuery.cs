@@ -1,15 +1,16 @@
 ﻿using MediatR;
-using User.API.Models;
+using System;
+using Users.API.Models;
 
-namespace CQRSUser.ServiceLayer.Queries
+namespace Users.API.ServiceLayer.Queries
 {
     public class GetUserQuery : IRequest<UserViewModel>
     {
-        public GetUserQuery(int id)
+        public GetUserQuery(Guid id)
         {
             Id = id;
         }
 
-        public int Id { get; }
+        public Guid Id { get; }
     }
 }
