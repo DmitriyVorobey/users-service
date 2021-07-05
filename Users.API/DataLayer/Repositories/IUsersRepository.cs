@@ -8,5 +8,6 @@ namespace Users.API.DataLayer.Repositories
     {
         Task<User> GetUser(Guid id);
         Task CreateUser(User user);
+        Task<User> GetUserByEmail(string email);
     }
 }

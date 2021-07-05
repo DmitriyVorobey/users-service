@@ -22,6 +22,7 @@ namespace Users.API.Controllers
             _mapper = mapper;
         }
 
+        // TODO: Add get users endpoint
         [HttpGet("{id}")]
         public async Task<UserViewModel> GetUser(Guid id)
         {
