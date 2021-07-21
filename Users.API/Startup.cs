@@ -28,6 +28,11 @@ namespace Users.API
             services.AddSingleton<IUsersRepository, InMemoryUsersRepository>();
 
             services.AddSwaggerGen();
+
+            //var connection = @"Server=db;Database=master;User=sa;Password=Your_password123;";
+
+            //services.AddDbContext<ApplicationDbContext>(
+            //        options => options.UseSqlServer(connection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

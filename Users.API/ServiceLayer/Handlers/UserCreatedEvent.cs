@@ -1,20 +1,25 @@
-﻿using System;
+﻿using MediatR;
+using System;
 
 namespace Users.API.ServiceLayer.Handlers
 {
-    internal class UserCreatedEvent
+    public class UserCreatedEvent : INotification
     {
-        private Guid id;
-        private string email;
-        private string firstName;
-        private string lastName;
+        public Guid Id { get; }
+        public string Email { get; }
+        public string FirstName { get; }
+        public string LastName { get; }
+
+        public DateTime Created { get; }
 
         public UserCreatedEvent(Guid id, string email, string firstName, string lastName)
         {
-            this.id = id;
-            this.email = email;
-            this.firstName = firstName;
-            this.lastName = lastName;
+            Id = id;
+            Email = email;
+            FirstName = firstName;
+            LastName = lastName;
+
+            Created = DateTime.UtcNow;
         }
     }
 }
